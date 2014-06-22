@@ -107,6 +107,10 @@ class App
 		
 		opt_parser.parse!(args)
 		# Check for mandatory options
+                if not options.wordlist and not options.users
+                        puts opt_parser
+                        exit
+                end
 		if not options.wordlist
 			puts "[!] Missing Wordlist setting, see help (-h)"
 			exit
